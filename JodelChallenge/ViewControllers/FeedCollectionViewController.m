@@ -38,5 +38,22 @@
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    _Bool isPortrait = [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait;
+    
+    if (isPortrait) {
+    return CGSizeMake(CGRectGetWidth(collectionView.frame), (CGRectGetHeight(collectionView.frame)/2));
+    } else {
+            return CGSizeMake(CGRectGetWidth(collectionView.frame)/2, (CGRectGetHeight(collectionView.frame)/2));
+    }
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+ 
+    [self.collectionView reloadData];
+}
+
 
 @end

@@ -16,6 +16,10 @@
 
 @implementation CollectionCell
 
+- (void)awakeFromNib {
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+}
+
 - (void)setupWithPhoto:(NSURL *)url {
     [self.imageView setImageWithURL:url];
 }
