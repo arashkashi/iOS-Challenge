@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [FlickrApi fetchPhotosWithCompletion:^(NSArray *photos, NSError *error) {
+    [FlickrApi fetchPhotosWithCompletion:^(NSArray *photos, NSUInteger page, NSUInteger perPage, NSUInteger total, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
         });

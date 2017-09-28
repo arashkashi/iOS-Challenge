@@ -8,6 +8,6 @@
 
 @interface FlickrApi : NSObject
 
-+ (void)fetchPhotosWithCompletion:(void (^)(NSArray *, NSError *))completion;
++ (void)fetchPhotosWithCompletion:(void (^)(NSArray *,NSUInteger , NSUInteger , NSUInteger , NSError *))completion;
 
 @end
