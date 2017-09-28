@@ -14,30 +14,61 @@ class SwiftFeedCollectionViewController: UICollectionViewController, UICollectio
     
     var photos: [URL] = []
     
+    var dataProvider = DataProvider<Photo>(operationMode: .UI)
+    var dataProviderBG = DataProvider<Photo>(operationMode: .Data)
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         FlickrApi.fetchPhotos { (photos, page, perPage, total, error) in
             
+            self.dataProviderBG.delelteAll()
+            
             self.photos = photos as! [URL]
             
-            DispatchQueue.main.async {
-                self.collectionView?.reloadData()
+            var count: Int16 = 0
+            for url in self.photos {
+                
+                self.dataProviderBG.create(setupBlock: { (photo) in
+
+                    photo.count = count
+                    photo.urlInString = url.absoluteString
+                }, completion: { (createdPhoto) in
+                    count = count + 1
+                    
+                    if count == self.photos.count {
+                        try? self.dataProviderBG.mainManagedContext.save()
+                        DispatchQueue.main.async {
+                            
+                            try? self.dataProvider.fetchResultController.performFetch()
+                        }
+                    }
+                })
             }
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.photos.count
+        guard let validFetchController = self.dataProvider.fetchResultController else { return 0 }
+        guard let validSections = validFetchController.sections else { return 0 }
+        
+        return validSections[section].numberOfObjects
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
+        let photo = self.dataProvider.fetchResultController?.object(at: indexPath)
         
-        cell.setup(withPhoto: self.photos[indexPath.row])
+        if photo == nil {
+            
+            print("error")
+        }
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! SwiftyCollectionCell
+        
+        cell.setupWith(photo: photo!)
         
         return cell
     }

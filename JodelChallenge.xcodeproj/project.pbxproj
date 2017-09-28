@@ -17,6 +17,18 @@
 		3FBCC75A1F73AE9200D35147 /* JodelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7591F73AE9200D35147 /* JodelChallengeTests.swift */; };
 		3FBCC7651F73AE9200D35147 /* JodelChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7641F73AE9200D35147 /* JodelChallengeUITests.swift */; };
 		41451BA71F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */; };
+		41451BB01F7D029B009FDA2C /* FetchResultsControllerWithCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BA81F7D029A009FDA2C /* FetchResultsControllerWithCollectionView.swift */; };
+		41451BB11F7D029B009FDA2C /* CoreStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BA91F7D029A009FDA2C /* CoreStorable.swift */; };
+		41451BB21F7D029B009FDA2C /* PersistentStoreCoordinatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BAA1F7D029B009FDA2C /* PersistentStoreCoordinatorManager.swift */; };
+		41451BB31F7D029B009FDA2C /* ResourceMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BAB1F7D029B009FDA2C /* ResourceMetaInfo.swift */; };
+		41451BB41F7D029B009FDA2C /* PersisteneStoreInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BAC1F7D029B009FDA2C /* PersisteneStoreInitializer.swift */; };
+		41451BB51F7D029B009FDA2C /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BAD1F7D029B009FDA2C /* DataProvider.swift */; };
+		41451BB61F7D029B009FDA2C /* FetchResultsControllerWithTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BAE1F7D029B009FDA2C /* FetchResultsControllerWithTableView.swift */; };
+		41451BB71F7D029B009FDA2C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BAF1F7D029B009FDA2C /* Utils.swift */; };
+		41451BBA1F7D03AC009FDA2C /* Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41451BB81F7D03AC009FDA2C /* Photos.xcdatamodeld */; };
+		41451BBD1F7D045B009FDA2C /* PhotosCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BBC1F7D045B009FDA2C /* PhotosCoreData.swift */; };
+		41451BBF1F7D06A9009FDA2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41451BBE1F7D06A9009FDA2C /* CoreData.framework */; };
+		41451BC11F7D07AE009FDA2C /* SwiftyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BC01F7D07AE009FDA2C /* SwiftyCollectionCell.swift */; };
 		E3F2831F9F2C8EF141DFDAF9 /* libPods-JodelChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310774A51D73A513D7854CD7 /* libPods-JodelChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +71,18 @@
 		3FBCC7641F73AE9200D35147 /* JodelChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodelChallengeUITests.swift; sourceTree = "<group>"; };
 		3FBCC7661F73AE9200D35147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFeedCollectionViewController.swift; sourceTree = "<group>"; };
+		41451BA81F7D029A009FDA2C /* FetchResultsControllerWithCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultsControllerWithCollectionView.swift; sourceTree = "<group>"; };
+		41451BA91F7D029A009FDA2C /* CoreStorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorable.swift; sourceTree = "<group>"; };
+		41451BAA1F7D029B009FDA2C /* PersistentStoreCoordinatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStoreCoordinatorManager.swift; sourceTree = "<group>"; };
+		41451BAB1F7D029B009FDA2C /* ResourceMetaInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceMetaInfo.swift; sourceTree = "<group>"; };
+		41451BAC1F7D029B009FDA2C /* PersisteneStoreInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersisteneStoreInitializer.swift; sourceTree = "<group>"; };
+		41451BAD1F7D029B009FDA2C /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		41451BAE1F7D029B009FDA2C /* FetchResultsControllerWithTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultsControllerWithTableView.swift; sourceTree = "<group>"; };
+		41451BAF1F7D029B009FDA2C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		41451BB91F7D03AC009FDA2C /* Photos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photos.xcdatamodel; sourceTree = "<group>"; };
+		41451BBC1F7D045B009FDA2C /* PhotosCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCoreData.swift; sourceTree = "<group>"; };
+		41451BBE1F7D06A9009FDA2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		41451BC01F7D07AE009FDA2C /* SwiftyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCollectionCell.swift; sourceTree = "<group>"; };
 		725C4F04B15E5272D8D1E3A0 /* Pods-JodelChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		A7096B2AF22017DBA2B785C4 /* Pods-JodelChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41451BBF1F7D06A9009FDA2C /* CoreData.framework in Frameworks */,
 				E3F2831F9F2C8EF141DFDAF9 /* libPods-JodelChallenge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +138,7 @@
 			children = (
 				3F89F9D01F73B005002A3FCB /* CollectionCell.h */,
 				3F89F9CF1F73B005002A3FCB /* CollectionCell.m */,
+				41451BC01F7D07AE009FDA2C /* SwiftyCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -123,6 +149,7 @@
 				3F89F9D21F73B010002A3FCB /* FeedCollectionViewController.h */,
 				3F89F9D11F73B010002A3FCB /* FeedCollectionViewController.m */,
 				41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */,
+				41451BB81F7D03AC009FDA2C /* Photos.xcdatamodeld */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,7 +179,8 @@
 		3FBCC7431F73AE9200D35147 /* JodelChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				41451BA51F7CF890009FDA2C /* New Group */,
+				41451BBB1F7D0432009FDA2C /* Model */,
+				41451BA51F7CF890009FDA2C /* DataProvider */,
 				3F89F9CB1F73AF97002A3FCB /* ViewControllers */,
 				3F89F9CA1F73AF92002A3FCB /* Cells */,
 				3F89F9C91F73AF8A002A3FCB /* NetworkAPI */,
@@ -183,16 +211,33 @@
 			path = JodelChallengeUITests;
 			sourceTree = "<group>";
 		};
-		41451BA51F7CF890009FDA2C /* New Group */ = {
+		41451BA51F7CF890009FDA2C /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				41451BA91F7D029A009FDA2C /* CoreStorable.swift */,
+				41451BAD1F7D029B009FDA2C /* DataProvider.swift */,
+				41451BA81F7D029A009FDA2C /* FetchResultsControllerWithCollectionView.swift */,
+				41451BAE1F7D029B009FDA2C /* FetchResultsControllerWithTableView.swift */,
+				41451BAC1F7D029B009FDA2C /* PersisteneStoreInitializer.swift */,
+				41451BAA1F7D029B009FDA2C /* PersistentStoreCoordinatorManager.swift */,
+				41451BAB1F7D029B009FDA2C /* ResourceMetaInfo.swift */,
+				41451BAF1F7D029B009FDA2C /* Utils.swift */,
 			);
-			path = "New Group";
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		41451BBB1F7D0432009FDA2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41451BBC1F7D045B009FDA2C /* PhotosCoreData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		760BAB3B5631AF7F57670803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41451BBE1F7D06A9009FDA2C /* CoreData.framework */,
 				310774A51D73A513D7854CD7 /* libPods-JodelChallenge.a */,
 			);
 			name = Frameworks;
@@ -387,11 +432,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41451BB41F7D029B009FDA2C /* PersisteneStoreInitializer.swift in Sources */,
 				3F52243F1F73B0BD00D7D77A /* CollectionCell.m in Sources */,
 				3F52243E1F73B0B800D7D77A /* FeedCollectionViewController.m in Sources */,
+				41451BB61F7D029B009FDA2C /* FetchResultsControllerWithTableView.swift in Sources */,
+				41451BB11F7D029B009FDA2C /* CoreStorable.swift in Sources */,
+				41451BB71F7D029B009FDA2C /* Utils.swift in Sources */,
+				41451BBD1F7D045B009FDA2C /* PhotosCoreData.swift in Sources */,
+				41451BC11F7D07AE009FDA2C /* SwiftyCollectionCell.swift in Sources */,
 				3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */,
+				41451BB51F7D029B009FDA2C /* DataProvider.swift in Sources */,
+				41451BB31F7D029B009FDA2C /* ResourceMetaInfo.swift in Sources */,
 				3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */,
+				41451BB01F7D029B009FDA2C /* FetchResultsControllerWithCollectionView.swift in Sources */,
 				41451BA71F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift in Sources */,
+				41451BBA1F7D03AC009FDA2C /* Photos.xcdatamodeld in Sources */,
+				41451BB21F7D029B009FDA2C /* PersistentStoreCoordinatorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +746,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		41451BB81F7D03AC009FDA2C /* Photos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				41451BB91F7D03AC009FDA2C /* Photos.xcdatamodel */,
+			);
+			currentVersion = 41451BB91F7D03AC009FDA2C /* Photos.xcdatamodel */;
+			path = Photos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3FBCC7391F73AE9200D35147 /* Project object */;
 }

@@ -5,4 +5,6 @@
 #import "FlickrApi.h"
 #import "CollectionCell.h"
 #import "FeedCollectionViewController.h"
+#import "UIImageView+AFNetworking.h"
+
 
