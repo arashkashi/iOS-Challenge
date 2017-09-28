@@ -27,7 +27,7 @@ class SwiftFeedCollectionViewController: UICollectionViewController, UICollectio
             
             self.photos = photos as! [URL]
             
-            var count: Int16 = 0
+            var count: Int16 = 1
             for url in self.photos {
                 
                 self.dataProviderBG.create(setupBlock: { (photo) in
@@ -37,7 +37,18 @@ class SwiftFeedCollectionViewController: UICollectionViewController, UICollectio
                 }, completion: { (createdPhoto) in
                     count = count + 1
                     
-                    if count == self.photos.count {
+                })
+            }
+            
+            for index in self.photos.count + 1...Int(total) {
+                
+                self.dataProviderBG.create(setupBlock: { (photo) in
+                    photo.urlInString = nil
+                    photo.count = Int16(index)
+                }, completion: { (createdPhoto) in
+                    
+                    if index == Int(total) {
+                        
                         try? self.dataProviderBG.mainManagedContext.save()
                         DispatchQueue.main.async {
                             

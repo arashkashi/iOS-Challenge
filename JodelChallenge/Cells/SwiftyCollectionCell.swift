@@ -16,6 +16,13 @@ class SwiftyCollectionCell: UICollectionViewCell {
         
         super.awakeFromNib()
         self.imageView.contentMode = .scaleAspectFit
+        self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
+    }
+    
+    override func prepareForReuse() {
+        
+        super.prepareForReuse()
+        self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
     }
     
     func setupWith(photo: Photo) {
