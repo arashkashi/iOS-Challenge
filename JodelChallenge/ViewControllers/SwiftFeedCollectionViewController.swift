@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class SwiftFeedCollectionViewController: UICollectionViewController {
+class SwiftFeedCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var photos: [URL] = []
     
@@ -20,11 +20,11 @@ class SwiftFeedCollectionViewController: UICollectionViewController {
         
         FlickrApi.fetchPhotos { (photos, page, perPage, total, error) in
             
+            self.photos = photos as! [URL]
+            
             DispatchQueue.main.async {
                 self.collectionView?.reloadData()
             }
-            
-            self.photos = photos as! [URL]
         }
     }
     
@@ -40,5 +40,19 @@ class SwiftFeedCollectionViewController: UICollectionViewController {
         cell.setup(withPhoto: self.photos[indexPath.row])
         
         return cell
+    }
+    
+     func collectionView(_ collectionView: UICollectionView,
+                                 layout collectionViewLayout: UICollectionViewLayout,
+                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var isPortraite = UIDevice.current.orientation == .portrait
+        
+        if isPortraite {
+            
+            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height/2)
+        } else {
+            
+            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height/2)
+        }
     }
 }
