@@ -16,6 +16,7 @@
 		3FBCC74F1F73AE9200D35147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC74D1F73AE9200D35147 /* LaunchScreen.storyboard */; };
 		3FBCC75A1F73AE9200D35147 /* JodelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7591F73AE9200D35147 /* JodelChallengeTests.swift */; };
 		3FBCC7651F73AE9200D35147 /* JodelChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7641F73AE9200D35147 /* JodelChallengeUITests.swift */; };
+		41451BA71F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */; };
 		E3F2831F9F2C8EF141DFDAF9 /* libPods-JodelChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310774A51D73A513D7854CD7 /* libPods-JodelChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		3FBCC7601F73AE9200D35147 /* JodelChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JodelChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBCC7641F73AE9200D35147 /* JodelChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodelChallengeUITests.swift; sourceTree = "<group>"; };
 		3FBCC7661F73AE9200D35147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFeedCollectionViewController.swift; sourceTree = "<group>"; };
 		725C4F04B15E5272D8D1E3A0 /* Pods-JodelChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		A7096B2AF22017DBA2B785C4 /* Pods-JodelChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 			children = (
 				3F89F9D21F73B010002A3FCB /* FeedCollectionViewController.h */,
 				3F89F9D11F73B010002A3FCB /* FeedCollectionViewController.m */,
+				41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 		3FBCC7431F73AE9200D35147 /* JodelChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				41451BA51F7CF890009FDA2C /* New Group */,
 				3F89F9CB1F73AF97002A3FCB /* ViewControllers */,
 				3F89F9CA1F73AF92002A3FCB /* Cells */,
 				3F89F9C91F73AF8A002A3FCB /* NetworkAPI */,
@@ -177,6 +181,13 @@
 				3FBCC7661F73AE9200D35147 /* Info.plist */,
 			);
 			path = JodelChallengeUITests;
+			sourceTree = "<group>";
+		};
+		41451BA51F7CF890009FDA2C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		760BAB3B5631AF7F57670803 /* Frameworks */ = {
@@ -380,6 +391,7 @@
 				3F52243E1F73B0B800D7D77A /* FeedCollectionViewController.m in Sources */,
 				3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */,
 				3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */,
+				41451BA71F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
