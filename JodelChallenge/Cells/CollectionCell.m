@@ -17,6 +17,7 @@
 @implementation CollectionCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
