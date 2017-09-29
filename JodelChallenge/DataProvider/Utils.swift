@@ -12,18 +12,18 @@ import CoreData
 
 
 func isRunningTests() -> Bool {
-    
-    return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+  
+  return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 }
 
 
 extension NSLock {
-    
-    func withCriticalScope<T>(_ block: () -> T) -> T {
-        lock()
-        let value = block()
-        unlock()
-        return value
-    }
+  
+  func withCriticalScope<T>(_ block: () -> T) -> T {
+    lock()
+    let value = block()
+    unlock()
+    return value
+  }
 }
 

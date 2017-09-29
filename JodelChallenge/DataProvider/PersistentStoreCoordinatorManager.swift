@@ -22,29 +22,29 @@ import CoreData
  
  */
 class PersistentStoresCoordinatorManager {
+  
+  private var storeCordinatorByEntityName: [String: NSPersistentStoreCoordinator] = [:]
+  
+  private let persisteneStoreInitializer: PersisteneStoreInitializer = PersisteneStoreInitializer()
+  
+  func persistenceStoreCoordinatorFor<T: CoreStorable>(modelClass: T.Type) -> NSPersistentStoreCoordinator {
     
-    private var storeCordinatorByEntityName: [String: NSPersistentStoreCoordinator] = [:]
-    
-    private let persisteneStoreInitializer: PersisteneStoreInitializer = PersisteneStoreInitializer()
-    
-    func persistenceStoreCoordinatorFor<T: CoreStorable>(modelClass: T.Type) -> NSPersistentStoreCoordinator {
-        
-        if let alreadyExistingCoordinator = storeCordinatorByEntityName[modelClass.metaInfo.coreStoreModelName] {
-            
-            return alreadyExistingCoordinator
-        }
-        
-        let newCoordinator = persisteneStoreInitializer.setupPersistenceStoreCoordinator(filename: modelClass.metaInfo.coreStoreSQLiteFilename, resourceDataModelName: modelClass.metaInfo.coreStoreModelName)
-        
-        storeCordinatorByEntityName[modelClass.metaInfo.coreStoreModelName] = newCoordinator
-        
-        return newCoordinator
+    if let alreadyExistingCoordinator = storeCordinatorByEntityName[modelClass.metaInfo.coreStoreModelName] {
+      
+      return alreadyExistingCoordinator
     }
     
-    private init() {}
+    let newCoordinator = persisteneStoreInitializer.setupPersistenceStoreCoordinator(filename: modelClass.metaInfo.coreStoreSQLiteFilename, resourceDataModelName: modelClass.metaInfo.coreStoreModelName)
     
-    static let sharedIntance: PersistentStoresCoordinatorManager = {
-        
-        return PersistentStoresCoordinatorManager()
-    }()
+    storeCordinatorByEntityName[modelClass.metaInfo.coreStoreModelName] = newCoordinator
+    
+    return newCoordinator
+  }
+  
+  private init() {}
+  
+  static let sharedIntance: PersistentStoresCoordinatorManager = {
+    
+    return PersistentStoresCoordinatorManager()
+  }()
 }

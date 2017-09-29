@@ -9,28 +9,28 @@
 import Foundation
 
 class SwiftyCollectionCell: UICollectionViewCell {
+  
+  @IBOutlet weak var imageView: UIImageView!
+  
+  override func awakeFromNib() {
     
-    @IBOutlet weak var imageView: UIImageView!
+    super.awakeFromNib()
+    self.imageView.contentMode = .scaleAspectFit
+    self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
+  }
+  
+  override func prepareForReuse() {
     
-    override func awakeFromNib() {
-        
-        super.awakeFromNib()
-        self.imageView.contentMode = .scaleAspectFit
-        self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
+    super.prepareForReuse()
+    self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
+  }
+  
+  func setupWith(photo: Photo) {
+    
+    if let validURLString = photo.urlInString,
+      let validURL = URL(string: validURLString) {
+      
+      self.imageView.setImageWith(validURL)
     }
-    
-    override func prepareForReuse() {
-        
-        super.prepareForReuse()
-        self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
-    }
-    
-    func setupWith(photo: Photo) {
-        
-        if let validURLString = photo.urlInString,
-            let validURL = URL(string: validURLString) {
-            
-            self.imageView.setImageWith(validURL)
-        }
-    }
+  }
 }

@@ -12,23 +12,23 @@ import CoreData
 
 
 protocol CoreStorable {
-    
-    associatedtype T: NSManagedObject
-    
-    static var metaInfo: ResourceMetaInfo { get }
-    
-    static var fetchRequestWithDescriptor: NSFetchRequest<T> { get }
-    
-    static var fetchAllRequest: NSFetchRequest<T> { get }
+  
+  associatedtype T: NSManagedObject
+  
+  static var metaInfo: ResourceMetaInfo { get }
+  
+  static var fetchRequestWithDescriptor: NSFetchRequest<T> { get }
+  
+  static var fetchAllRequest: NSFetchRequest<T> { get }
 }
 
 
 extension CoreStorable  {
+  
+  static var fetchAllRequest: NSFetchRequest<T> {
     
-    static var fetchAllRequest: NSFetchRequest<T> {
-        
-        return NSFetchRequest<T>(entityName: Self.metaInfo.entityName)
-    }
+    return NSFetchRequest<T>(entityName: Self.metaInfo.entityName)
+  }
 }
 
 
