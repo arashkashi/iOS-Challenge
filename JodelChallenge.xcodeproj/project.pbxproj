@@ -30,6 +30,7 @@
 		41451BBF1F7D06A9009FDA2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41451BBE1F7D06A9009FDA2C /* CoreData.framework */; };
 		41451BC11F7D07AE009FDA2C /* SwiftyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BC01F7D07AE009FDA2C /* SwiftyCollectionCell.swift */; };
 		41451BC31F7D11BD009FDA2C /* PaintCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BC21F7D11BD009FDA2C /* PaintCode.swift */; };
+		41451BC51F7E2371009FDA2C /* SwiftFeedCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BC41F7E2371009FDA2C /* SwiftFeedCollectionViewModel.swift */; };
 		E3F2831F9F2C8EF141DFDAF9 /* libPods-JodelChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310774A51D73A513D7854CD7 /* libPods-JodelChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		41451BBE1F7D06A9009FDA2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		41451BC01F7D07AE009FDA2C /* SwiftyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCollectionCell.swift; sourceTree = "<group>"; };
 		41451BC21F7D11BD009FDA2C /* PaintCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCode.swift; sourceTree = "<group>"; };
+		41451BC41F7E2371009FDA2C /* SwiftFeedCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFeedCollectionViewModel.swift; sourceTree = "<group>"; };
 		725C4F04B15E5272D8D1E3A0 /* Pods-JodelChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		A7096B2AF22017DBA2B785C4 /* Pods-JodelChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				3F89F9D11F73B010002A3FCB /* FeedCollectionViewController.m */,
 				41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */,
 				41451BB81F7D03AC009FDA2C /* Photos.xcdatamodeld */,
+				41451BC41F7E2371009FDA2C /* SwiftFeedCollectionViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				41451BB51F7D029B009FDA2C /* DataProvider.swift in Sources */,
 				41451BB31F7D029B009FDA2C /* ResourceMetaInfo.swift in Sources */,
 				3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */,
+				41451BC51F7E2371009FDA2C /* SwiftFeedCollectionViewModel.swift in Sources */,
 				41451BC31F7D11BD009FDA2C /* PaintCode.swift in Sources */,
 				41451BB01F7D029B009FDA2C /* FetchResultsControllerWithCollectionView.swift in Sources */,
 				41451BA71F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift in Sources */,

@@ -12,52 +12,16 @@ import UIKit
 
 class SwiftFeedCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var photos: [URL] = []
-    
     var dataProvider = DataProvider<Photo>(operationMode: .UI)
     var dataProviderBG = DataProvider<Photo>(operationMode: .Data)
+    
+    var viewModel = SwiftFeedCollectionViewModel()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        FlickrApi.fetchPhotos { (photos, page, perPage, total, error) in
-            
-            self.dataProviderBG.delelteAll()
-            
-            self.photos = photos as! [URL]
-            
-            var count: Int16 = 1
-            for url in self.photos {
-                
-                self.dataProviderBG.create(setupBlock: { (photo) in
-
-                    photo.count = count
-                    photo.urlInString = url.absoluteString
-                }, completion: { (createdPhoto) in
-                    count = count + 1
-                    
-                })
-            }
-            
-            for index in self.photos.count + 1...Int(total) {
-                
-                self.dataProviderBG.create(setupBlock: { (photo) in
-                    photo.urlInString = nil
-                    photo.count = Int16(index)
-                }, completion: { (createdPhoto) in
-                    
-                    if index == Int(total) {
-                        
-                        try? self.dataProviderBG.mainManagedContext.save()
-                        DispatchQueue.main.async {
-                            
-                            try? self.dataProvider.fetchResultController.performFetch()
-                        }
-                    }
-                })
-            }
-        }
+        viewModel.getFreshData { (success) in }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
