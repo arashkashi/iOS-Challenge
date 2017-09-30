@@ -14,6 +14,9 @@ class SwiftyCollectionCell: UICollectionViewCell {
   
   @IBOutlet weak var imageView: UIImageView!
   
+  var fullScreenImagePresenter: ModalFullScreenImageView?
+  weak var collectionViewController: UICollectionViewController?
+  
   var hasValidPicture = false
   var row: Int16 = 0
   
@@ -41,5 +44,12 @@ class SwiftyCollectionCell: UICollectionViewCell {
     }
     
     self.row = photo.count
+    
+    if let validVC = self.collectionViewController,
+      fullScreenImagePresenter == nil {
+      
+      fullScreenImagePresenter = ModalFullScreenImageView(viewController: validVC,
+                                                          imageView: self.imageView)
+    }
   }
 }

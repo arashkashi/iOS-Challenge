@@ -112,11 +112,18 @@ class DataProvider<T: CoreStorable & NSFetchRequestResult>: NSObject {
   
   func delelteAll() {
     
-    let fetchRequest = NSFetchRequest<T>(entityName: T.metaInfo.entityName)
-    let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+    let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: T.metaInfo.entityName)
+    fetchRequest.includesPropertyValues = false
     
-    let _ = try? self.persistentStoreCoordinator.execute(batchDeleteRequest,
-                                                         with: mainManagedContext)
+    do {
+      let items = try mainManagedContext.fetch(fetchRequest) as! [NSManagedObject]
+      items.forEach { mainManagedContext.delete($0) }
+      
+      try mainManagedContext.save()
+
+    } catch let error as NSError {
+      print(error.localizedDescription)
+    }
   }
   
   // MARK: Subscription

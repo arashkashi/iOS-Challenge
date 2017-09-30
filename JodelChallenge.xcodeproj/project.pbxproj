@@ -17,6 +17,7 @@
 		3FBCC74F1F73AE9200D35147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC74D1F73AE9200D35147 /* LaunchScreen.storyboard */; };
 		3FBCC75A1F73AE9200D35147 /* JodelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7591F73AE9200D35147 /* JodelChallengeTests.swift */; };
 		3FBCC7651F73AE9200D35147 /* JodelChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7641F73AE9200D35147 /* JodelChallengeUITests.swift */; };
+		41148A131F7FF6DB00006333 /* ModalFullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41148A121F7FF6DB00006333 /* ModalFullScreenImageView.swift */; };
 		41451BA71F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */; };
 		41451BB01F7D029B009FDA2C /* FetchResultsControllerWithCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BA81F7D029A009FDA2C /* FetchResultsControllerWithCollectionView.swift */; };
 		41451BB11F7D029B009FDA2C /* CoreStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41451BA91F7D029A009FDA2C /* CoreStorable.swift */; };
@@ -72,6 +73,7 @@
 		3FBCC7601F73AE9200D35147 /* JodelChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JodelChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBCC7641F73AE9200D35147 /* JodelChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodelChallengeUITests.swift; sourceTree = "<group>"; };
 		3FBCC7661F73AE9200D35147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41148A121F7FF6DB00006333 /* ModalFullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFullScreenImageView.swift; sourceTree = "<group>"; };
 		41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFeedCollectionViewController.swift; sourceTree = "<group>"; };
 		41451BA81F7D029A009FDA2C /* FetchResultsControllerWithCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultsControllerWithCollectionView.swift; sourceTree = "<group>"; };
 		41451BA91F7D029A009FDA2C /* CoreStorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorable.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				41451BA61F7CF8CB009FDA2C /* SwiftFeedCollectionViewController.swift */,
 				41451BB81F7D03AC009FDA2C /* Photos.xcdatamodeld */,
 				41451BC41F7E2371009FDA2C /* SwiftFeedCollectionViewModel.swift */,
+				41148A121F7FF6DB00006333 /* ModalFullScreenImageView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				41451BB51F7D029B009FDA2C /* DataProvider.swift in Sources */,
 				41451BB31F7D029B009FDA2C /* ResourceMetaInfo.swift in Sources */,
 				3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */,
+				41148A131F7FF6DB00006333 /* ModalFullScreenImageView.swift in Sources */,
 				41451BC51F7E2371009FDA2C /* SwiftFeedCollectionViewModel.swift in Sources */,
 				41451BC31F7D11BD009FDA2C /* PaintCode.swift in Sources */,
 				41451BB01F7D029B009FDA2C /* FetchResultsControllerWithCollectionView.swift in Sources */,

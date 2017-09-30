@@ -35,6 +35,7 @@ class SwiftFeedCollectionViewModel {
             guard let validFetch = fetched else { return }
             assert(validFetch.count == 1)
             validFetch.first?.urlInString = fetchedPhoto.absoluteString
+            print("updating: \(validFetch.first?.count ?? 9999)")
             counter = counter + 1
             
             if counter == validPhotos.count {
@@ -56,32 +57,35 @@ class SwiftFeedCollectionViewModel {
       
       self?.dataProvider.delelteAll()
       
-      var count: Int16 = 1
-      for url in validPhotos {
-        
-        self?.dataProvider.create(setupBlock: { (photo) in
+      DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.1, execute: {
+        var count: Int16 = 1
+        for url in validPhotos {
           
-          photo.count = count
-          photo.urlInString = url.absoluteString
-        }, completion: { (createdPhoto) in
-          count = count + 1
-        })
-      }
-      
-      for index in validPhotos.count + 1...Int(total) {
-        
-        self?.dataProvider.create(setupBlock: { (photo) in
-          photo.urlInString = nil
-          photo.count = Int16(index)
-        }, completion: { (createdPhoto) in
-          
-          if index == Int(total) {
+          // Fill 
+          self?.dataProvider.create(setupBlock: { (photo) in
             
-            try? self?.dataProvider.mainManagedContext.save()
-            DispatchQueue.main.async { completion(true) }
-          }
-        })
-      }
+            photo.count = count
+            photo.urlInString = url.absoluteString
+          }, completion: { (createdPhoto) in
+            count = count + 1
+          })
+        }
+        
+        for index in validPhotos.count + 1...Int(total) {
+          
+          self?.dataProvider.create(setupBlock: { (photo) in
+            photo.urlInString = nil
+            photo.count = Int16(index)
+          }, completion: { (createdPhoto) in
+            
+            if index == Int(total) {
+              
+              try? self?.dataProvider.mainManagedContext.save()
+              DispatchQueue.main.async { completion(true) }
+            }
+          })
+        }
+      })
     }
   }
 }

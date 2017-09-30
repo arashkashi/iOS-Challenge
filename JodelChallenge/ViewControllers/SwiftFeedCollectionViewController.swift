@@ -44,6 +44,7 @@ class SwiftFeedCollectionViewController: UICollectionViewController, UICollectio
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! SwiftyCollectionCell
     
+    cell.collectionViewController = self
     cell.setupWith(photo: photo!)
     
     return cell
