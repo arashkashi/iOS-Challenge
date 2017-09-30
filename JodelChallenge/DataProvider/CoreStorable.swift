@@ -32,3 +32,16 @@ extension CoreStorable  {
 }
 
 
+extension Photo {
+  
+  static func fetchRequest(count: Int16) -> NSFetchRequest<Photo> {
+    
+    let request = Photo.fetchRequestWithDescriptor
+    let predicate = NSPredicate(format: "count == %i", count)
+    NSLog("Fetch request count == %i", count)
+    request.predicate = predicate
+    return request
+  }
+}
+
+

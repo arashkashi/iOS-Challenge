@@ -65,6 +65,7 @@ class SwiftFeedCollectionViewController: UICollectionViewController, UICollectio
       return
     }
     
+    viewModel.updateVisibleCells(cells: visibleCells)
   }
   
   override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
