@@ -51,15 +51,22 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBN-oE-nWL">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="77j-Fg-XXD">
+                                            <rect key="frame" x="15" y="15" width="20" height="20"/>
+                                            <color key="color" red="0.1137254902" green="0.25490196079999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="77j-Fg-XXD" firstAttribute="centerX" secondItem="HNq-Nl-u9j" secondAttribute="centerX" id="Dp8-0K-QNx"/>
+                                    <constraint firstItem="77j-Fg-XXD" firstAttribute="centerY" secondItem="HNq-Nl-u9j" secondAttribute="centerY" id="Io6-w6-Zp7"/>
                                     <constraint firstItem="gBN-oE-nWL" firstAttribute="top" secondItem="HNq-Nl-u9j" secondAttribute="top" id="a0v-Wd-JhM"/>
                                     <constraint firstItem="gBN-oE-nWL" firstAttribute="leading" secondItem="HNq-Nl-u9j" secondAttribute="leading" id="nSn-Ww-eB7"/>
                                     <constraint firstAttribute="trailing" secondItem="gBN-oE-nWL" secondAttribute="trailing" id="qhT-oS-fhh"/>
                                     <constraint firstAttribute="bottom" secondItem="gBN-oE-nWL" secondAttribute="bottom" id="qrn-bi-MTC"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="77j-Fg-XXD" id="Z6g-M2-hOw"/>
                                     <outlet property="imageView" destination="gBN-oE-nWL" id="mAR-kb-i7X"/>
                                 </connections>
                             </collectionViewCell>

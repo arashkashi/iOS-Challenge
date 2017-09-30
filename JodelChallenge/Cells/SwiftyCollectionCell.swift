@@ -13,6 +13,7 @@ import Kingfisher
 class SwiftyCollectionCell: UICollectionViewCell {
   
   @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet var activityIndicator: UIActivityIndicatorView!
   
   var fullScreenImagePresenter: ModalFullScreenImageView?
   weak var collectionViewController: UICollectionViewController?
@@ -25,6 +26,7 @@ class SwiftyCollectionCell: UICollectionViewCell {
     super.awakeFromNib()
     self.imageView.contentMode = .scaleAspectFit
     self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
+    self.activityIndicator.hidesWhenStopped = true
   }
   
   override func prepareForReuse() {
@@ -32,6 +34,7 @@ class SwiftyCollectionCell: UICollectionViewCell {
     super.prepareForReuse()
     self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
     self.hasValidPicture = false
+    self.activityIndicator.startAnimating()
   }
   
   func setupWith(photo: Photo) {
@@ -41,6 +44,7 @@ class SwiftyCollectionCell: UICollectionViewCell {
 
       self.imageView.kf.setImage(with: validURL)
       self.hasValidPicture = true
+      self.activityIndicator.stopAnimating()
     }
     
     self.row = photo.count
