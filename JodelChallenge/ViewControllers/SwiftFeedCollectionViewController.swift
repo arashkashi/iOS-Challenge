@@ -96,7 +96,7 @@ extension Collection where Iterator.Element == SwiftyCollectionCell {
     guard self.count != 0 else { return nil }
     
     let rows = self.map { $0.row }
-    var min = rows.min()!
+    let min = rows.min()!
     var max = rows.max()!
     
     guard min < total && max < total else { return nil }
