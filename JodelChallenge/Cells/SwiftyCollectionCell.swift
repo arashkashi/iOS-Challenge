@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Kingfisher
+
 
 class SwiftyCollectionCell: UICollectionViewCell {
   
@@ -33,8 +35,8 @@ class SwiftyCollectionCell: UICollectionViewCell {
     
     if let validURLString = photo.urlInString,
       let validURL = URL(string: validURLString) {
-      
-//      self.imageView.setImageWith(validURL)
+
+      self.imageView.kf.setImage(with: validURL)
       self.hasValidPicture = true
     }
     

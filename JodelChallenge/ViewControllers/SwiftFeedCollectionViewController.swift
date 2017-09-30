@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 
 typealias PageInfo = (page: Int16, perPage: Int16)
@@ -15,15 +16,18 @@ typealias PageInfo = (page: Int16, perPage: Int16)
 class SwiftFeedCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
   
   var dataProvider = DataProvider<Photo>(operationMode: .UI)
-  var dataProviderBG = DataProvider<Photo>(operationMode: .Data)
   
   var viewModel = SwiftFeedCollectionViewModel()
+  var syncer: FetchResultsControllerWithCollectionView?
   
   override func viewDidLoad() {
     
     super.viewDidLoad()
     
     viewModel.getFreshData { (success) in }
+    
+    syncer = FetchResultsControllerWithCollectionView(fetchResultController: self.dataProvider.fetchResultController as! NSFetchedResultsController<NSManagedObject>,
+                                                      collectionView: self.collectionView!)
   }
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
