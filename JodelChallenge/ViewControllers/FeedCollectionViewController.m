@@ -19,11 +19,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [FlickrApi fetchPhotosForPage:@"1" perPage:@"10" withCompletion:^(NSArray *photos, NSUInteger page, NSUInteger perPage, NSUInteger total, NSError *error) {
+  [FlickrApi fetchPhotosForPage:@"1" perPage:@"10" withCompletion:^(NSDictionary *photos, NSUInteger page, NSUInteger perPage, NSUInteger total, NSError *error) {
     dispatch_async(dispatch_get_main_queue(), ^{
       [self.collectionView reloadData];
     });
-    self.photos = photos;
+    self.photos = photos[@"urls"];
     NSLog(@"result %@ error %@", photos, error);
   }];
 }

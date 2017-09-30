@@ -23,7 +23,8 @@ class SwiftFeedCollectionViewModel {
                           perPage: "\(pageInfo.perPage)")
     { [weak self] (photos, page, perPage, total, error) in
       
-      guard let validPhotos = photos as? [URL] else { return }
+      guard let validPhotos = photos?["urls"] as? [URL] else { return }
+      guard let validTitles = photos?["titles"] as? [String] else { return }
       
       var counter = 0
       for (index, fetchedPhoto) in validPhotos.enumerated() {
@@ -35,6 +36,7 @@ class SwiftFeedCollectionViewModel {
             guard let validFetch = fetched else { return }
             assert(validFetch.count == 1)
             validFetch.first?.urlInString = fetchedPhoto.absoluteString
+            validFetch.first?.title = validTitles[index]
             print("updating: \(validFetch.first?.count ?? 9999)")
             counter = counter + 1
             
@@ -53,19 +55,21 @@ class SwiftFeedCollectionViewModel {
     FlickrApi.fetchPhotos(forPage: "1", perPage: "10") { [weak self] (photos, page, perPage, total, error) in
       
       guard error == nil else { completion(false); return }
-      guard let validPhotos = photos as? [URL] else { completion(false); return }
+      guard let validPhotos = photos?["urls"] as? [URL] else { completion(false); return }
+      guard let validTitles = photos?["titles"] as? [String] else { completion(false); return }
       
       self?.dataProvider.delelteAll()
       
       DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.1, execute: {
         var count: Int16 = 1
-        for url in validPhotos {
+        for (index, url) in validPhotos.enumerated() {
           
           // Fill 
           self?.dataProvider.create(setupBlock: { (photo) in
             
             photo.count = count
             photo.urlInString = url.absoluteString
+            photo.title = validTitles[index]
           }, completion: { (createdPhoto) in
             count = count + 1
           })
