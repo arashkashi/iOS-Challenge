@@ -12,6 +12,9 @@ class SwiftyCollectionCell: UICollectionViewCell {
   
   @IBOutlet weak var imageView: UIImageView!
   
+  var hasValidPicture = false
+  var row: Int16 = 0
+  
   override func awakeFromNib() {
     
     super.awakeFromNib()
@@ -23,6 +26,7 @@ class SwiftyCollectionCell: UICollectionViewCell {
     
     super.prepareForReuse()
     self.imageView.image = Add.image(frame: self.imageView.frame, resizing: .aspectFit)
+    self.hasValidPicture = false
   }
   
   func setupWith(photo: Photo) {
@@ -30,7 +34,10 @@ class SwiftyCollectionCell: UICollectionViewCell {
     if let validURLString = photo.urlInString,
       let validURL = URL(string: validURLString) {
       
-      self.imageView.setImageWith(validURL)
+//      self.imageView.setImageWith(validURL)
+      self.hasValidPicture = true
     }
+    
+    self.row = photo.count
   }
 }

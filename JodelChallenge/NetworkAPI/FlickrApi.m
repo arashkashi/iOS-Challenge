@@ -9,14 +9,14 @@
 
 @implementation FlickrApi
 
-+ (void)fetchPhotosWithCompletion:(void (^)(NSArray *, NSUInteger, NSUInteger, NSUInteger, NSError *))completion {
++ (void)fetchPhotosForPage:(NSString *)page perPage:(NSString *)perPage withCompletion:(void (^)(NSArray *, NSUInteger, NSUInteger, NSUInteger, NSError *))completion {
   FlickrKit *fk = [FlickrKit sharedFlickrKit];
   
   [fk initializeWithAPIKey:@"92111faaf0ac50706da05a1df2e85d82" sharedSecret:@"89ded1035d7ceb3a"];
   
   FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
-  interesting.per_page = @"10";
-  interesting.page = @"1";
+  interesting.per_page = perPage;
+  interesting.page = page;
   
   [fk call:interesting completion:^(NSDictionary *response, NSError *error) {
     NSMutableArray *photoURLs = nil;

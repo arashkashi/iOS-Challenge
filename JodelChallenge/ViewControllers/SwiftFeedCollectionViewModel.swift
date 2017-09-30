@@ -17,17 +17,17 @@ class SwiftFeedCollectionViewModel {
   // This functions fetches the first page upon the app start
   func getFreshData(completion: @escaping (Bool) -> () ) {
     
-    FlickrApi.fetchPhotos { (photos, page, perPage, total, error) in
-      
-      self.dataProvider.delelteAll()
+    FlickrApi.fetchPhotos(forPage: "1", perPage: "10") { [weak self] (photos, page, perPage, total, error) in
       
       guard error == nil else { completion(false); return }
       guard let validPhotos = photos as? [URL] else { completion(false); return }
       
+      self?.dataProvider.delelteAll()
+      
       var count: Int16 = 1
       for url in validPhotos {
         
-        self.dataProvider.create(setupBlock: { (photo) in
+        self?.dataProvider.create(setupBlock: { (photo) in
           
           photo.count = count
           photo.urlInString = url.absoluteString
@@ -38,14 +38,14 @@ class SwiftFeedCollectionViewModel {
       
       for index in validPhotos.count + 1...Int(total) {
         
-        self.dataProvider.create(setupBlock: { (photo) in
+        self?.dataProvider.create(setupBlock: { (photo) in
           photo.urlInString = nil
           photo.count = Int16(index)
         }, completion: { (createdPhoto) in
           
           if index == Int(total) {
             
-            try? self.dataProvider.mainManagedContext.save()
+            try? self?.dataProvider.mainManagedContext.save()
             DispatchQueue.main.async { completion(true) }
           }
         })

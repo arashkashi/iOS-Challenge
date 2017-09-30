@@ -8,6 +8,6 @@
 
 @interface FlickrApi : NSObject
 
-+ (void)fetchPhotosWithCompletion:(void (^)(NSArray *,NSUInteger , NSUInteger , NSUInteger , NSError *))completion;
++ (void)fetchPhotosForPage:(NSString *)page perPage:(NSString *)perPage withCompletion:(void (^)(NSArray *, NSUInteger, NSUInteger, NSUInteger, NSError *))completion;
 
 @end
