@@ -36,7 +36,11 @@
       }
     }
     if (completion) {
-      completion(@{@"urls": photoURLs, @"titles": photoTitles}, page, perPage, total, error);
+      if (photoURLs) {
+        completion(@{@"urls": photoURLs, @"titles": photoTitles}, page, perPage, total, error);
+      } else {
+        completion(nil, page, perPage, total, error);
+      }
     }
   }];
 }
