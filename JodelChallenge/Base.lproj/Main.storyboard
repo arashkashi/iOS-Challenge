@@ -55,10 +55,26 @@
                                             <rect key="frame" x="15" y="15" width="20" height="20"/>
                                             <color key="color" red="0.1137254902" green="0.25490196079999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9V-fI-6jH">
+                                            <rect key="frame" x="5" y="5" width="40" height="52.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" metaFont="system" size="22"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="G9V-fI-6jH" firstAttribute="leading" secondItem="HNq-Nl-u9j" secondAttribute="leading" constant="5" id="048-Iv-pkr"/>
                                     <constraint firstItem="77j-Fg-XXD" firstAttribute="centerX" secondItem="HNq-Nl-u9j" secondAttribute="centerX" id="Dp8-0K-QNx"/>
+                                    <constraint firstAttribute="trailing" secondItem="G9V-fI-6jH" secondAttribute="trailing" constant="5" id="FRU-ac-rTR"/>
+                                    <constraint firstItem="G9V-fI-6jH" firstAttribute="top" secondItem="HNq-Nl-u9j" secondAttribute="top" constant="5" id="GD9-LY-AgZ"/>
                                     <constraint firstItem="77j-Fg-XXD" firstAttribute="centerY" secondItem="HNq-Nl-u9j" secondAttribute="centerY" id="Io6-w6-Zp7"/>
                                     <constraint firstItem="gBN-oE-nWL" firstAttribute="top" secondItem="HNq-Nl-u9j" secondAttribute="top" id="a0v-Wd-JhM"/>
                                     <constraint firstItem="gBN-oE-nWL" firstAttribute="leading" secondItem="HNq-Nl-u9j" secondAttribute="leading" id="nSn-Ww-eB7"/>
@@ -68,6 +84,7 @@
                                 <connections>
                                     <outlet property="activityIndicator" destination="77j-Fg-XXD" id="Z6g-M2-hOw"/>
                                     <outlet property="imageView" destination="gBN-oE-nWL" id="mAR-kb-i7X"/>
+                                    <outlet property="titleLabel" destination="G9V-fI-6jH" id="Pee-Ui-rDR"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
