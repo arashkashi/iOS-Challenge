@@ -35,6 +35,7 @@ class SwiftyCollectionCell: UICollectionViewCell {
     self.imageView.image = nil
     self.hasValidPicture = false
     self.activityIndicator.startAnimating()
+    self.titleLabel.text = ""
   }
   
   func setupWith(photo: Photo) {
