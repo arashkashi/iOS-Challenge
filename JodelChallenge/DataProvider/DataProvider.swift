@@ -110,6 +110,7 @@ class DataProvider<T: CoreStorable & NSFetchRequestResult>: NSObject {
     }
   }
   
+  // TODO: should use a more efficient way to delete such as removing the store completely.
   func delelteAll() {
     
     let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: T.metaInfo.entityName)
